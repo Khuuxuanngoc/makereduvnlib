@@ -6,11 +6,11 @@
 #       Datatypes (KEYWORD1)          # 
 #######################################
 
-MKL_HCSR04	KEYWORD1
-MKL_DFRobotDFPlayerMini KEYWORD1
-MKL_LiquidCrystal_I2C KEYWORD1
-MKL_OneButton KEYWORD1
-MKL_Dabble KEYWORD1
+MKE_HCSR04	KEYWORD1
+MKE_DFRobotDFPlayerMini KEYWORD1
+MKE_LiquidCrystal_I2C KEYWORD1
+MKE_OneButton KEYWORD1
+MKE_Dabble KEYWORD1
 
 #######################################
 #  Methods and Functions (KEYWORD2)   #
