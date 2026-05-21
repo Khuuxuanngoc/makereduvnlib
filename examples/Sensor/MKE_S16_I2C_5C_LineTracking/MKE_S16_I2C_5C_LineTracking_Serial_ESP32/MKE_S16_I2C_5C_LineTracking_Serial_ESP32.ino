@@ -1,21 +1,11 @@
 // Thêm bộ thư viện
 // Add the library.
-#include <MKL_LiquidCrystal_I2C.h>
-#include "Makerlabvn_I2C_Line_Follower_Sensor.h"
+#include "MKE_I2C_5C_LineTracking.h"
 
-// Khởi tạo LCD
-//LCD config
-MKL_LiquidCrystal_I2C lcd(0x27, 16, 2);
-
-Makerlabvn_I2C_Line_Follower_Sensor LineFollowSensor;
+MKE_I2C_5C_LineTracking LineFollowSensor;
 
 void setup()
 {
-  // Khởi động LCD
-  // LCD start
-  lcd.init();
-  lcd.backlight();
-
   // Khởi động kết nối Serial UART ở tốc độ 115200 để truyền dữ liệu lên máy tính.
   // Start the Serial UART connection at 115200 to transfer data to the computer.
   Serial.begin(115200);
@@ -35,22 +25,6 @@ void loop()
   // Đọc giá trị cảm biến
   // Get value
   LineFollowSensor.getData();
-
-  //Gửi giá trị cảm biến lên LCD
-  //Show the sensor value on LCD
-  lcd.setCursor(1,0);
-  lcd.print("P1 P2 P3 P4 P5");
-  lcd.setCursor(1,1);
-  lcd.print(LineFollowSensor.getValue(0));
-  lcd.setCursor(4,1);
-  lcd.print(LineFollowSensor.getValue(1));
-  lcd.setCursor(7,1);
-  lcd.print(LineFollowSensor.getValue(2));
-  lcd.setCursor(10,1);
-  lcd.print(LineFollowSensor.getValue(3));
-  lcd.setCursor(13,1);
-  lcd.print(LineFollowSensor.getValue(4));
-
 
   // Hiển thị giá trị đo được của cảm biến lên máy tính.
   // Show the sensor value on Arduno Serial Monitor
